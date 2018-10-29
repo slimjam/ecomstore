@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog',
+    'utils',
 ]
 
 MIDDLEWARE = [
@@ -52,13 +53,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ecomstore.urls'
-
+# check if it's needed to add media_url
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             #os.path.join(CURRENT_PATH, 'templates').replace('\\', '/'),
-            'd:/django/ecomstore/templates',
+            #'d:/django/ecomstore/templates',
+            os.path.join(BASE_DIR, "templates")
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -67,6 +69,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'ecomstore.utils.context_processors.ecomstore',
             ],
         },
     },
@@ -130,3 +136,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+SITE_NAME = 'Online Shop'
+META_KEYWORDS = 'Shop, products, all, categories'
+META_DESCRIPTION = 'Basic e-commerce project'
