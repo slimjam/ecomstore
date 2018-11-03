@@ -1,6 +1,7 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render
+
 
 def home(request):
-    return render_to_response('index.html')
+    return render(request, 'index.html')
 
 # Create your views here.

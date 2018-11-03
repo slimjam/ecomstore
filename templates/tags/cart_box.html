@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% with cart_item_count as cart_count %}
+    <a href="{% url 'show_cart' %}">
+        Shopping Cart
+        <br />
+        {{ cart_count }} Item{{ cart_count|pluralize }}
+    </a>
+{% endwith %}
+<!--<div class="/card">
+    <div class="fn.org">Online Shop</div>
+    <div class="adr">
+        <div class="street-address">12345 Streer</div>
+        <div>
+            <span class="locality">Minsk City</span>
+            <abbr class="region" title="Minsk">MINSK</abbr>
+            <span class="postal-code">54321</span>
+        </div>
+        <div class="country-name">BELARUS</div>
+    </div>
+    <div>Phone: <span class="tel">+37529-000-00-00</span> </div>
+    <div>Email: <span class="email">mail@ilyalosikshop.com</span> </div>
+</div>-->

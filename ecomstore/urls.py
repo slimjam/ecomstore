@@ -23,4 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('catalog.urls')),
     path('catalog/', views.home, name='home'),
+    path('cart/', include('cart.urls')),
 ]
+
+handler404 = 'views.file_not_found_404'

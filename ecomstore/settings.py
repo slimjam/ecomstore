@@ -26,7 +26,7 @@ SECRET_KEY = 't@184ew_3um+x2yk(d1yw&--e786m=ygn8n*h33!!o&qp)b+&$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
@@ -38,11 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'catalog',
     'utils',
+    'cart',
 ]
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'ecomstore.urls'
@@ -139,5 +144,6 @@ STATICFILES_DIRS = [
 ]
 
 SITE_NAME = 'Online Shop'
+SITE_ID = 2
 META_KEYWORDS = 'Shop, products, all, categories'
 META_DESCRIPTION = 'Basic e-commerce project'
