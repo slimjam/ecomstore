@@ -1,5 +1,6 @@
 from django import forms
 from .models import Product
+from django.core import validators
 
 
 class ProductAdminForm(forms.ModelForm):
@@ -35,6 +36,15 @@ class ProductAddToCartForm(forms.Form):
 
     # custom validation to check for cookies
     def clean(self):
+        product_slug = self.data.get('product_slug', '')
+        products = Product.objects.filter(slug=product_slug)
+        for pr in products:
+            q = self.data.get('quantity', '')
+            try:
+                if int(q) > pr.quantity:
+                    raise forms.ValidationError("Sorry, you choose more than available products.")
+            except ValueError:
+                pass
         if self.request:
             if not self.request.session.test_cookie_worked():
                 raise forms.ValidationError("Cookies must be enabled.")

@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from cart import cart
-# from django.views.decorators.csrf import csrf_protect
-#
-#
-# @csrf_protect
+
+
 def show_cart(request, template_name="cart/cart.html"):
     print(request.method)
     if request.method == 'POST':
@@ -19,5 +17,3 @@ def show_cart(request, template_name="cart/cart.html"):
     page_title = 'Shopping Cart'
     cart_subtotal = cart.cart_subtotal(request)
     return render(request, template_name, locals())
-    # else:
-    #     return render(request, template_name, {})

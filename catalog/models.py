@@ -1,8 +1,6 @@
 from django.db import models
 from django.urls import reverse
 
-# check get_ABSOLUTE URL RESERVE and work my views or not locals()?
-
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -17,24 +15,11 @@ class Category(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # add get_absolute_url()
     def __unicode__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse('catalog_category', kwargs={'category_slug': self.slug})
-        # return 'catalog_category', (), {'category_slug': self.slug}
-
-    # class Meta:
-    #     db_table = 'categories'
-    #     ordering = ['-created_at']
-    #     verbose_name_plural = 'Categories'
-    #
-    #     def __unicode__(self):
-    #         return self.name
-    #
-    #     def get_absolute_url(self):
-    #         return 'catalog_category', (), {'category_slug': self.slug}
 
 
 class Product(models.Model):
@@ -61,20 +46,6 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('catalog_product', kwargs={'product_slug': self.slug})
-        # return 'catalog_product', (), {'product_slug': self.slug}
 
     def sale_price(self):
         return self.price if self.old_price > self.price else None
-
-    # class Meta:
-    #     db_table = 'products'
-    #     ordering = ['-created_at']
-    #
-    #     def __unicode__(self):
-    #         return self.name
-    #
-    #     def get_absolute_url(self):
-    #         return 'catalog_product', (), {'product_slug': self.slug}
-    #
-    #     def sale_price(self):
-    #         return self.price if self.old_price > self.price else None

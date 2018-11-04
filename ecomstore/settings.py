@@ -58,14 +58,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ecomstore.urls'
-# check if it's needed to add media_url
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            #os.path.join(CURRENT_PATH, 'templates').replace('\\', '/'),
-            'd:/django/ecomstore/templates',
-            #os.path.join(BASE_DIR, "templates")
+            os.path.join(BASE_DIR, "templates"),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -137,7 +135,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-#MEDIA_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static").replace('\\', '/'),
@@ -147,3 +144,4 @@ SITE_NAME = 'Online Shop'
 SITE_ID = 2
 META_KEYWORDS = 'Shop, products, all, categories'
 META_DESCRIPTION = 'Basic e-commerce project'
+PRODUCTS_PER_PAGE = 3

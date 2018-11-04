@@ -1,9 +1,7 @@
 from .models import CartItem
 from catalog.models import Product
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponseRedirect
-
-import decimal   # not needed yet but we will later
+import decimal
 import random
 
 CART_ID_SESSION_KEY = 'cart_id'

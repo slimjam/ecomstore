@@ -14,16 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
-from preview import views
-
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-
+from .views import file_not_found_404
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('catalog.urls')),
-    path('catalog/', views.home, name='home'),
     path('cart/', include('cart.urls')),
 ]
 
-handler404 = 'views.file_not_found_404'
+handler404 = file_not_found_404

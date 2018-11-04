@@ -26,7 +26,7 @@
     {% if cart_items %}
         <tr>
             <th class="right" colspan="6">
-                <a href="/url/to/checkout/">Checkout Now</a>
+                <a href="{% url 'catalog_home' %}">Checkout Now</a>
             </th>
         </tr>
     {% endif %}
@@ -40,7 +40,7 @@
                         {{ item.name }}
                     </a>
                 </td>
-                <td>{{ item.price|currency }}</td>
+                <td>{{ item.price }} $</td>
                 <td class="right">
                 <form method="post" action="." class="cart">
                     {% csrf_token %}
@@ -60,7 +60,7 @@
                         <input type="submit" name="submit" value="Remove"/>
                     </form>
                 </td>
-                <td class="right">{{ item.total|currency }}</td>
+                <td class="right">{{ item.total }} $</td>
             </tr>
         {% endfor %}
     {% else %}

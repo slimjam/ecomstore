@@ -2,6 +2,7 @@ from django import template
 from cart import cart
 from catalog.models import Category
 from django.contrib.flatpages.models import FlatPage
+from urllib.parse import urlencode
 
 register = template.Library()
 
@@ -25,3 +26,21 @@ def category_list(request_path):
 def footer_links():
     flatpage_list = FlatPage.objects.all()
     return {'flatpage_list': flatpage_list}
+
+
+@register.inclusion_tag('tags/pagination_links.html')
+def pagination_links(request, paginator):
+    raw_params = request.GET.copy()
+    page = raw_params.get('page', 1)
+    p = paginator.page(page)
+    try:
+        del raw_params['page']
+    except KeyError:
+        pass
+    params = urlencode(raw_params)
+    return {
+        'request': request,
+        'paginator': paginator,
+        'p': p,
+        'params': params
+    }
