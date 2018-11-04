@@ -87,8 +87,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-11-03.21:01:10.296</IntrospectionTimestamp>
-      <IntrospectionStateNumber>669</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-11-04.14:52:58.822</IntrospectionTimestamp>
+      <IntrospectionStateNumber>746</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -321,7 +321,7 @@
     <table id="46" parent="15" name="catalog_product">
       <ObjectId>16574</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>614</StateNumber>
+      <StateNumber>746</StateNumber>
     </table>
     <table id="47" parent="15" name="catalog_product_categories">
       <ObjectId>16589</ObjectId>
@@ -1077,46 +1077,53 @@ permission_id</ColNames>
       <StateNumber>600</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="161" parent="46" name="catalog_product_pkey">
+    <column id="161" parent="46" name="options">
+      <Position>18</Position>
+      <DataType>jsonb|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>746</StateNumber>
+      <TypeId>3802</TypeId>
+    </column>
+    <index id="162" parent="46" name="catalog_product_pkey">
       <ObjectId>16581</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="162" parent="46" name="catalog_product_name_key">
+    <index id="163" parent="46" name="catalog_product_name_key">
       <ObjectId>16583</ObjectId>
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="163" parent="46" name="catalog_product_slug_key">
+    <index id="164" parent="46" name="catalog_product_slug_key">
       <ObjectId>16585</ObjectId>
       <ColNames>slug</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="164" parent="46" name="catalog_product_name_924af5bc_like">
+    <index id="165" parent="46" name="catalog_product_name_924af5bc_like">
       <ObjectId>16596</ObjectId>
       <ColNames>name</ColNames>
     </index>
-    <index id="165" parent="46" name="catalog_product_slug_f37848b0_like">
+    <index id="166" parent="46" name="catalog_product_slug_f37848b0_like">
       <ObjectId>16597</ObjectId>
       <ColNames>slug</ColNames>
     </index>
-    <key id="166" parent="46" name="catalog_product_pkey">
+    <key id="167" parent="46" name="catalog_product_pkey">
       <ObjectId>16582</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>catalog_product_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="167" parent="46" name="catalog_product_name_key">
+    <key id="168" parent="46" name="catalog_product_name_key">
       <ObjectId>16584</ObjectId>
       <ColNames>name</ColNames>
       <UnderlyingIndexName>catalog_product_name_key</UnderlyingIndexName>
     </key>
-    <key id="168" parent="46" name="catalog_product_slug_key">
+    <key id="169" parent="46" name="catalog_product_slug_key">
       <ObjectId>16586</ObjectId>
       <ColNames>slug</ColNames>
       <UnderlyingIndexName>catalog_product_slug_key</UnderlyingIndexName>
     </key>
-    <column id="169" parent="47" name="id">
+    <column id="170" parent="47" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1125,52 +1132,52 @@ permission_id</ColNames>
       <TypeId>23</TypeId>
       <SequenceName>catalog_product_categories_id_seq</SequenceName>
     </column>
-    <column id="170" parent="47" name="product_id">
+    <column id="171" parent="47" name="product_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>600</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="171" parent="47" name="category_id">
+    <column id="172" parent="47" name="category_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>600</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="172" parent="47" name="catalog_product_categories_pkey">
+    <index id="173" parent="47" name="catalog_product_categories_pkey">
       <ObjectId>16593</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="173" parent="47" name="catalog_product_categories_product_id_category_id_9802d7aa_uniq">
+    <index id="174" parent="47" name="catalog_product_categories_product_id_category_id_9802d7aa_uniq">
       <ObjectId>16608</ObjectId>
       <ColNames>product_id
 category_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="174" parent="47" name="catalog_product_categories_product_id_be67c3f5">
+    <index id="175" parent="47" name="catalog_product_categories_product_id_be67c3f5">
       <ObjectId>16610</ObjectId>
       <ColNames>product_id</ColNames>
     </index>
-    <index id="175" parent="47" name="catalog_product_categories_category_id_f9457ae1">
+    <index id="176" parent="47" name="catalog_product_categories_category_id_f9457ae1">
       <ObjectId>16611</ObjectId>
       <ColNames>category_id</ColNames>
     </index>
-    <key id="176" parent="47" name="catalog_product_categories_pkey">
+    <key id="177" parent="47" name="catalog_product_categories_pkey">
       <ObjectId>16594</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>catalog_product_categories_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="177" parent="47" name="catalog_product_categories_product_id_category_id_9802d7aa_uniq">
+    <key id="178" parent="47" name="catalog_product_categories_product_id_category_id_9802d7aa_uniq">
       <ObjectId>16609</ObjectId>
       <ColNames>product_id
 category_id</ColNames>
       <UnderlyingIndexName>catalog_product_categories_product_id_category_id_9802d7aa_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="178" parent="47" name="catalog_product_cate_product_id_be67c3f5_fk_catalog_p">
+    <foreign-key id="179" parent="47" name="catalog_product_cate_product_id_be67c3f5_fk_catalog_p">
       <ObjectId>16598</ObjectId>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -1181,7 +1188,7 @@ category_id</ColNames>
       <RefKeyName>catalog_product_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="179" parent="47" name="catalog_product_cate_category_id_f9457ae1_fk_catalog_c">
+    <foreign-key id="180" parent="47" name="catalog_product_cate_category_id_f9457ae1_fk_catalog_c">
       <ObjectId>16603</ObjectId>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -1192,7 +1199,7 @@ category_id</ColNames>
       <RefKeyName>catalog_category_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="180" parent="48" name="id">
+    <column id="181" parent="48" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1201,73 +1208,73 @@ category_id</ColNames>
       <TypeId>23</TypeId>
       <SequenceName>django_admin_log_id_seq</SequenceName>
     </column>
-    <column id="181" parent="48" name="action_time">
+    <column id="182" parent="48" name="action_time">
       <Position>2</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>564</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="182" parent="48" name="object_id">
+    <column id="183" parent="48" name="object_id">
       <Position>3</Position>
       <DataType>text|0s</DataType>
       <StateNumber>564</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="183" parent="48" name="object_repr">
+    <column id="184" parent="48" name="object_repr">
       <Position>4</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>564</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="184" parent="48" name="action_flag">
+    <column id="185" parent="48" name="action_flag">
       <Position>5</Position>
       <DataType>smallint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>564</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="185" parent="48" name="change_message">
+    <column id="186" parent="48" name="change_message">
       <Position>6</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>564</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="186" parent="48" name="content_type_id">
+    <column id="187" parent="48" name="content_type_id">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>564</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="187" parent="48" name="user_id">
+    <column id="188" parent="48" name="user_id">
       <Position>8</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>564</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="188" parent="48" name="django_admin_log_pkey">
+    <index id="189" parent="48" name="django_admin_log_pkey">
       <ObjectId>16529</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="189" parent="48" name="django_admin_log_content_type_id_c4bce8eb">
+    <index id="190" parent="48" name="django_admin_log_content_type_id_c4bce8eb">
       <ObjectId>16541</ObjectId>
       <ColNames>content_type_id</ColNames>
     </index>
-    <index id="190" parent="48" name="django_admin_log_user_id_c564eba6">
+    <index id="191" parent="48" name="django_admin_log_user_id_c564eba6">
       <ObjectId>16542</ObjectId>
       <ColNames>user_id</ColNames>
     </index>
-    <key id="191" parent="48" name="django_admin_log_pkey">
+    <key id="192" parent="48" name="django_admin_log_pkey">
       <ObjectId>16530</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>django_admin_log_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="192" parent="48" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
+    <foreign-key id="193" parent="48" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
       <ObjectId>16531</ObjectId>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -1278,7 +1285,7 @@ category_id</ColNames>
       <RefKeyName>django_content_type_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="193" parent="48" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
+    <foreign-key id="194" parent="48" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
       <ObjectId>16536</ObjectId>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -1289,12 +1296,12 @@ category_id</ColNames>
       <RefKeyName>auth_user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <check id="194" parent="48" name="django_admin_log_action_flag_check">
+    <check id="195" parent="48" name="django_admin_log_action_flag_check">
       <ObjectId>16525</ObjectId>
       <ColNames>action_flag</ColNames>
       <Predicate>action_flag &gt;= 0</Predicate>
     </check>
-    <column id="195" parent="49" name="id">
+    <column id="196" parent="49" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1303,44 +1310,44 @@ category_id</ColNames>
       <TypeId>23</TypeId>
       <SequenceName>django_content_type_id_seq</SequenceName>
     </column>
-    <column id="196" parent="49" name="app_label">
+    <column id="197" parent="49" name="app_label">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="197" parent="49" name="model">
+    <column id="198" parent="49" name="model">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="198" parent="49" name="django_content_type_pkey">
+    <index id="199" parent="49" name="django_content_type_pkey">
       <ObjectId>16411</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="199" parent="49" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <index id="200" parent="49" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ObjectId>16413</ObjectId>
       <ColNames>app_label
 model</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="200" parent="49" name="django_content_type_pkey">
+    <key id="201" parent="49" name="django_content_type_pkey">
       <ObjectId>16412</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>django_content_type_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="201" parent="49" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <key id="202" parent="49" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ObjectId>16414</ObjectId>
       <ColNames>app_label
 model</ColNames>
       <UnderlyingIndexName>django_content_type_app_label_model_76bd3d3b_uniq</UnderlyingIndexName>
     </key>
-    <column id="202" parent="50" name="id">
+    <column id="203" parent="50" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1349,68 +1356,68 @@ model</ColNames>
       <TypeId>23</TypeId>
       <SequenceName>django_flatpage_id_seq</SequenceName>
     </column>
-    <column id="203" parent="50" name="url">
+    <column id="204" parent="50" name="url">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="204" parent="50" name="title">
+    <column id="205" parent="50" name="title">
       <Position>3</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="205" parent="50" name="content">
+    <column id="206" parent="50" name="content">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="206" parent="50" name="enable_comments">
+    <column id="207" parent="50" name="enable_comments">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="207" parent="50" name="template_name">
+    <column id="208" parent="50" name="template_name">
       <Position>6</Position>
       <DataType>varchar(70)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="208" parent="50" name="registration_required">
+    <column id="209" parent="50" name="registration_required">
       <Position>7</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="209" parent="50" name="django_flatpage_pkey">
+    <index id="210" parent="50" name="django_flatpage_pkey">
       <ObjectId>16644</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="210" parent="50" name="django_flatpage_url_41612362">
+    <index id="211" parent="50" name="django_flatpage_url_41612362">
       <ObjectId>16654</ObjectId>
       <ColNames>url</ColNames>
     </index>
-    <index id="211" parent="50" name="django_flatpage_url_41612362_like">
+    <index id="212" parent="50" name="django_flatpage_url_41612362_like">
       <ObjectId>16655</ObjectId>
       <ColNames>url</ColNames>
     </index>
-    <key id="212" parent="50" name="django_flatpage_pkey">
+    <key id="213" parent="50" name="django_flatpage_pkey">
       <ObjectId>16645</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>django_flatpage_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="213" parent="51" name="id">
+    <column id="214" parent="51" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1419,52 +1426,52 @@ model</ColNames>
       <TypeId>23</TypeId>
       <SequenceName>django_flatpage_sites_id_seq</SequenceName>
     </column>
-    <column id="214" parent="51" name="flatpage_id">
+    <column id="215" parent="51" name="flatpage_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="215" parent="51" name="site_id">
+    <column id="216" parent="51" name="site_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="216" parent="51" name="django_flatpage_sites_pkey">
+    <index id="217" parent="51" name="django_flatpage_sites_pkey">
       <ObjectId>16652</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="217" parent="51" name="django_flatpage_sites_flatpage_id_site_id_0d29d9d1_uniq">
+    <index id="218" parent="51" name="django_flatpage_sites_flatpage_id_site_id_0d29d9d1_uniq">
       <ObjectId>16666</ObjectId>
       <ColNames>flatpage_id
 site_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="218" parent="51" name="django_flatpage_sites_flatpage_id_078bbc8b">
+    <index id="219" parent="51" name="django_flatpage_sites_flatpage_id_078bbc8b">
       <ObjectId>16668</ObjectId>
       <ColNames>flatpage_id</ColNames>
     </index>
-    <index id="219" parent="51" name="django_flatpage_sites_site_id_bfd8ea84">
+    <index id="220" parent="51" name="django_flatpage_sites_site_id_bfd8ea84">
       <ObjectId>16669</ObjectId>
       <ColNames>site_id</ColNames>
     </index>
-    <key id="220" parent="51" name="django_flatpage_sites_pkey">
+    <key id="221" parent="51" name="django_flatpage_sites_pkey">
       <ObjectId>16653</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>django_flatpage_sites_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="221" parent="51" name="django_flatpage_sites_flatpage_id_site_id_0d29d9d1_uniq">
+    <key id="222" parent="51" name="django_flatpage_sites_flatpage_id_site_id_0d29d9d1_uniq">
       <ObjectId>16667</ObjectId>
       <ColNames>flatpage_id
 site_id</ColNames>
       <UnderlyingIndexName>django_flatpage_sites_flatpage_id_site_id_0d29d9d1_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="222" parent="51" name="django_flatpage_site_flatpage_id_078bbc8b_fk_django_fl">
+    <foreign-key id="223" parent="51" name="django_flatpage_site_flatpage_id_078bbc8b_fk_django_fl">
       <ObjectId>16656</ObjectId>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -1475,7 +1482,7 @@ site_id</ColNames>
       <RefKeyName>django_flatpage_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="223" parent="51" name="django_flatpage_sites_site_id_bfd8ea84_fk_django_site_id">
+    <foreign-key id="224" parent="51" name="django_flatpage_sites_site_id_bfd8ea84_fk_django_site_id">
       <ObjectId>16661</ObjectId>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -1486,7 +1493,7 @@ site_id</ColNames>
       <RefKeyName>django_site_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="224" parent="52" name="id">
+    <column id="225" parent="52" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1495,79 +1502,79 @@ site_id</ColNames>
       <TypeId>23</TypeId>
       <SequenceName>django_migrations_id_seq</SequenceName>
     </column>
-    <column id="225" parent="52" name="app">
+    <column id="226" parent="52" name="app">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>559</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="226" parent="52" name="name">
+    <column id="227" parent="52" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>559</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="227" parent="52" name="applied">
+    <column id="228" parent="52" name="applied">
       <Position>4</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>559</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="228" parent="52" name="django_migrations_pkey">
+    <index id="229" parent="52" name="django_migrations_pkey">
       <ObjectId>16403</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="229" parent="52" name="django_migrations_pkey">
+    <key id="230" parent="52" name="django_migrations_pkey">
       <ObjectId>16404</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>django_migrations_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="230" parent="53" name="session_key">
+    <column id="231" parent="53" name="session_key">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>583</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="231" parent="53" name="session_data">
+    <column id="232" parent="53" name="session_data">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>583</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="232" parent="53" name="expire_date">
+    <column id="233" parent="53" name="expire_date">
       <Position>3</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>583</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="233" parent="53" name="django_session_pkey">
+    <index id="234" parent="53" name="django_session_pkey">
       <ObjectId>16555</ObjectId>
       <ColNames>session_key</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="234" parent="53" name="django_session_session_key_c0390e0f_like">
+    <index id="235" parent="53" name="django_session_session_key_c0390e0f_like">
       <ObjectId>16557</ObjectId>
       <ColNames>session_key</ColNames>
     </index>
-    <index id="235" parent="53" name="django_session_expire_date_a5c62663">
+    <index id="236" parent="53" name="django_session_expire_date_a5c62663">
       <ObjectId>16558</ObjectId>
       <ColNames>expire_date</ColNames>
     </index>
-    <key id="236" parent="53" name="django_session_pkey">
+    <key id="237" parent="53" name="django_session_pkey">
       <ObjectId>16556</ObjectId>
       <ColNames>session_key</ColNames>
       <UnderlyingIndexName>django_session_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="237" parent="54" name="id">
+    <column id="238" parent="54" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1576,41 +1583,41 @@ site_id</ColNames>
       <TypeId>23</TypeId>
       <SequenceName>django_site_id_seq</SequenceName>
     </column>
-    <column id="238" parent="54" name="domain">
+    <column id="239" parent="54" name="domain">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>665</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="239" parent="54" name="name">
+    <column id="240" parent="54" name="name">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>665</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="240" parent="54" name="django_site_pkey">
+    <index id="241" parent="54" name="django_site_pkey">
       <ObjectId>16633</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="241" parent="54" name="django_site_domain_a2e37b91_uniq">
+    <index id="242" parent="54" name="django_site_domain_a2e37b91_uniq">
       <ObjectId>16670</ObjectId>
       <ColNames>domain</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="242" parent="54" name="django_site_domain_a2e37b91_like">
+    <index id="243" parent="54" name="django_site_domain_a2e37b91_like">
       <ObjectId>16672</ObjectId>
       <ColNames>domain</ColNames>
     </index>
-    <key id="243" parent="54" name="django_site_pkey">
+    <key id="244" parent="54" name="django_site_pkey">
       <ObjectId>16634</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>django_site_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="244" parent="54" name="django_site_domain_a2e37b91_uniq">
+    <key id="245" parent="54" name="django_site_domain_a2e37b91_uniq">
       <ObjectId>16671</ObjectId>
       <ColNames>domain</ColNames>
       <UnderlyingIndexName>django_site_domain_a2e37b91_uniq</UnderlyingIndexName>

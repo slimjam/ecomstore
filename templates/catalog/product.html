@@ -15,7 +15,11 @@
         <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
         {% if not forloop.last %}, {% endif %}
     {% endfor %}
-    <br /><br />
+    <br />
+    {% with options=p.options %}
+        {% include 'catalog/options_list.html' %}
+    {% endwith %}
+    <br />
     {% if p.sale_price %}
         Was: <del>$ {{ p.old_price }}</del>
         <br />

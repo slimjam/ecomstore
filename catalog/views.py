@@ -34,6 +34,20 @@ def show_product(request, product_slug, template_name="catalog/product.html"):
 
 def index(request, template_name="catalog/index.html"):
     page_title = 'Online shop'
+    if request.method == 'POST':
+        postdata = request.POST.copy()
+        if postdata['submit'] == 'Checkout':
+            cart_items = cart.get_cart_items(request)
+            for cart_item in cart_items:
+                p = cart_item.product
+                p.quantity -= cart_item.quantity
+                p.save()
+            cart.remove_from_cart(request, cart_items)
+            message = f"""
+            Thank you, for buying something in our shop.
+            If you wanna , you can continue.
+            Pleasure work for you.
+            """
     return render(request, template_name, context=locals())
 
 

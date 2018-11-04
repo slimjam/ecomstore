@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load catalog_filters %}
+<ol class="list-group">
+    {% for k, v in options.items %}
+        <li>{{ k }} :
+            {% if v|get_type == "<class 'dict'>" %}
+                {% with options=v %}
+                    {% include "catalog/options_list.html" %}
+                {% endwith %}
+            {% elif v|get_type == "<class 'list'>" or v|get_type == "<class 'tuple'>"%}
+                {% for elemnt in v %}
+                    {{ elemnt }},
+                {% endfor %}
+            {% else %}
+                {{ v }}
+            {% endif %}
+        </li>
+    {% endfor %}
+ </ol>

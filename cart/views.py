@@ -3,12 +3,8 @@ from cart import cart
 
 
 def show_cart(request, template_name="cart/cart.html"):
-    print(request.method)
     if request.method == 'POST':
         postdata = request.POST.copy()
-        print(postdata)
-        for p in postdata:
-            print(postdata)
         if postdata['submit'] == 'Remove':
             cart.remove_from_cart(request)
         if postdata['submit'] == 'Update':

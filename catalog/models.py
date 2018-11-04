@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.postgres.fields import JSONField
 
 
 class Category(models.Model):
@@ -43,6 +44,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField(Category)
+    options = JSONField(default=dict())
 
     def get_absolute_url(self):
         return reverse('catalog_product', kwargs={'product_slug': self.slug})
